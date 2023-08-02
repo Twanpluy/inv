@@ -4,3 +4,5 @@ backend_inv/users/__pycache__
 backend_inv/users/migrations/__pycache__
 backend_inv/backend_inv/__pycache__
 backend_inv/inventory/__pycache__
+backend_inv/backend_inv/__pycache__/settings.cpython-38.pyc
+.gitignore
