@@ -13,6 +13,12 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import toml
 from pathlib import Path
 
+
+# get config from toml file
+
+with open("config/db_config.toml") as f:
+    config = toml.load(f)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-b#_jl^eav$1dyd73c+200f(af*o$5gz4g66g%-%%j+#(b58yvg"
+SECRET_KEY = config["app"]["secret_key"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -74,10 +80,7 @@ WSGI_APPLICATION = "backend_inv.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-# get config from toml file
 
-with open("config/db_config.toml") as f:
-    config = toml.load(f)
 
 DATABASES = {
     "default": {
