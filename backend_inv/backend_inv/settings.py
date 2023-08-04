@@ -34,7 +34,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-#user model
+# user model
 # AUTH_USER_MODEL = "users.User"
 
 # Application definition
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "rest_framework",  # rest framework
     "users",  # users app
     "inventory",  # inventory app
+    "rest_framework.authtoken",  # rest framework token
 ]
 
 
@@ -63,6 +64,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "backend_inv.urls"
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+    ),
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated"),
+}
 
 TEMPLATES = [
     {
