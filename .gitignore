@@ -6,3 +6,5 @@ backend_inv/backend_inv/__pycache__
 backend_inv/inventory/__pycache__
 backend_inv/backend_inv/__pycache__/settings.cpython-38.pyc
 .gitignore
+backend_inv/backend_inv/__pycache__/settings.cpython-38.pyc
+backend_inv/backend_inv/__pycache__/urls.cpython-38.pyc
