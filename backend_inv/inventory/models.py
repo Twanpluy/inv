@@ -3,6 +3,8 @@ from django.db import models
 
 # Create your models here.
 class InventoryCaterogorie(models.Model):
+    _meta = {"db_table": "inventroy.inventory_category"}
+
     inverntory_category_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255, blank=False, unique=True)
     description = models.TextField(blank=True)
